@@ -1,0 +1,200 @@
+/* RTL Support */
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Vazir', 'Tahoma', sans-serif;
+    background-color: #f0f4f7;
+}
+
+/* Header */
+#header {
+    background: #fff;
+    color: #2c3e50;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 15px 20px;
+}
+
+/* Branding */
+#branding h1 {
+    text-align: right;
+    padding: 0;
+    font-size: 24px;
+    color: #2c3e50;
+}
+
+#branding h1 a {
+    color: #2c3e50;
+}
+
+/* Content */
+#content {
+    padding: 20px;
+}
+
+.dashboard #content {
+    width: 100%;
+    max-width: none;
+}
+
+/* Module Design */
+.module {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    border: none;
+}
+
+.module h2, .module caption {
+    background: #fff;
+    color: #2c3e50;
+    padding: 15px 20px;
+    font-size: 16px;
+    text-align: right;
+    border-bottom: 1px solid #eee;
+}
+
+/* User Selection Area */
+.user-selection {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.user-selection h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Online Users */
+.online-users {
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.online-users h3 {
+    color: #2c3e50;
+    margin: 0 0 15px;
+    font-size: 16px;
+}
+
+/* Status Indicators */
+.status-online {
+    color: #2ecc71;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.status-offline {
+    color: #e74c3c;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+/* User Tools */
+#user-tools {
+    text-align: left;
+    font-size: 13px;
+    color: #666;
+    margin-top: 5px;
+}
+
+#user-tools a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+#user-tools a:hover {
+    color: #2980b9;
+}
+
+/* Form Styling */
+.form-row {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.aligned label {
+    color: #666;
+    font-size: 14px;
+}
+
+/* Submit Row */
+.submit-row {
+    background: #fff;
+    padding: 15px 20px;
+    border-radius: 0 0 8px 8px;
+}
+
+.submit-row input {
+    background: #3498db;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-row input:hover {
+    background: #2980b9;
+}
+
+/* Messages */
+.messagelist {
+    padding: 0;
+    margin: 0 0 20px 0;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.messagelist li {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f5f5f5;
+    color: #666;
+}
+
+/* Chat Interface */
+.chat-interface {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin: 20px 0;
+    padding: 20px;
+}
+
+.chat-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.chat-messages {
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 15px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+    #header {
+        padding: 10px 15px;
+    }
+    
+    #branding h1 {
+        font-size: 20px;
+    }
+    
+    .module {
+        margin: 10px;
+    }
+    
+    .form-row {
+        padding: 10px 15px;
+    }
+} 

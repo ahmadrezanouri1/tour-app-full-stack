@@ -1,0 +1,835 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-vazirmatn: 'Vazirmatn';
+  }
+
+  body {
+    direction: rtl;
+    text-align: right;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    text-align: right;
+  }
+}
+
+:root {
+  --foreground-rgb: 26, 58, 31;
+  --background-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom styles for date input */
+input[type="date"] {
+  direction: ltr;
+  text-align: right;
+}
+
+/* Custom styles for buttons */
+.tour-button {
+  @apply px-4 py-2 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md;
+}
+
+.tour-button.active {
+  @apply bg-primary text-white border-2 border-primary;
+}
+
+.tour-button:not(.active) {
+  @apply bg-light text-primary border-2 border-primary/30 hover:border-primary;
+}
+
+.tour-button:hover {
+  @apply bg-primary/90 text-white transform -translate-y-0.5;
+}
+
+/* Custom styles for cards */
+.tour-card {
+  @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+  border: 1px solid rgba(45, 90, 39, 0.1);
+}
+
+.tour-card:hover {
+  @apply shadow-xl;
+  border-color: rgba(45, 90, 39, 0.2);
+}
+
+/* Custom styles for price tags */
+.price-value {
+  @apply text-primary font-bold text-lg;
+}
+
+/* Custom styles for badges */
+.installment-badge {
+  @apply bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium;
+}
+
+/* Custom styles for links */
+.see-all {
+  @apply text-primary hover:text-secondary transition-colors duration-300 font-medium;
+}
+
+/* Custom styles for form elements */
+.search-input {
+  @apply border-2 border-primary/20 rounded-lg px-4 py-2 focus:border-primary focus:outline-none transition-colors duration-300;
+}
+
+.search-button {
+  @apply bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-md;
+}
+
+@font-face {
+  font-family: 'IranTitr';
+  src: url('https://cdn.fontcdn.ir/Font/Persian/Titr/Titr.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Vazirmatn, Tahoma, Arial, sans-serif;
+}
+
+h1, h2, h3, .logo, .tour-button {
+  font-family: 'IranTitr', Vazirmatn, Tahoma, Arial, sans-serif;
+}
+
+/* Navigation Bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+  color: #ff6b6b;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+  @apply min-h-screen flex flex-col items-center justify-center px-4 py-12 md:py-20;
+}
+
+.hero h1 {
+  @apply text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-dark text-center;
+}
+
+.hero p {
+  @apply text-lg md:text-xl text-gray-600 max-w-2xl mx-auto text-center;
+}
+
+.tour-buttons {
+  @apply flex flex-col sm:flex-row gap-4 mb-8 md:mb-12 w-full max-w-md;
+}
+
+.window-views {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-6xl;
+}
+
+.plane-window {
+  @apply aspect-[3/4] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.plane-window img {
+  @apply w-full h-full object-cover hover:scale-105 transition-transform duration-300;
+}
+
+/* Search Form */
+.search-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  max-width: 1000px;
+  margin: 2rem auto;
+}
+
+.search-inputs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: right;
+}
+
+.search-button {
+  background-color: #0095ff;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.tour-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.tour-button {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  border: 1px solid #0095ff;
+  transition: all 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+.tour-button.active {
+  opacity: 1 !important;
+  background-color: #0095ff;
+  color: white;
+}
+
+.tour-button:not(.active) {
+  background-color: white;
+  color: #0095ff;
+}
+
+.foreign-tours {
+  background-color: #0095ff;
+  color: white;
+}
+
+.domestic-tours {
+  background-color: white;
+  color: #0095ff;
+}
+
+/* Add hover effect */
+.tour-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 149, 255, 0.2);
+}
+
+/* Add new styles for tour sections */
+.tour-section {
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-family: 'IranTitr', Vazirmatn, Tahoma, Arial, sans-serif;
+  font-size: 24px;
+  color: #333;
+}
+
+.see-all {
+  color: #0095ff;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.tour-cards {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 1rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  position: relative;
+}
+
+.tour-cards::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.tour-cards::after {
+  content: '';
+  padding-right: 1rem;
+}
+
+.tour-card {
+  min-width: 280px;
+  max-width: 320px;
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.tour-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.tour-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.tour-card:hover .tour-image {
+  transform: scale(1.05);
+}
+
+.tour-info {
+  padding: 1.2rem;
+  background: white;
+}
+
+.tour-name {
+  font-family: 'IranTitr', Vazirmatn, Tahoma, Arial, sans-serif;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.tour-price {
+  color: #666;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.price-value {
+  color: #0095ff;
+  font-weight: bold;
+  font-size: 16px;
+  display: block;
+  margin-top: 0.3rem;
+}
+
+.origin-card {
+  min-width: 240px;
+  max-width: 280px;
+  flex: 1;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.origin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.origin-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.origin-card:hover .origin-image {
+  transform: scale(1.05);
+}
+
+.tour-count {
+  background: rgba(0, 149, 255, 0.1);
+  color: #0095ff;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin-right: 0.5rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .tour-section {
+      padding: 1rem 2%;
+  }
+  
+  .tour-card, .origin-card {
+      min-width: 260px;
+  }
+
+  .tour-cards {
+      gap: 1rem;
+      padding: 0.5rem;
+  }
+}
+
+/* Add styles for latest tours section */
+.latest-tours {
+  @apply py-8 md:py-12 px-4 md:px-6 lg:px-8;
+}
+
+.latest-tour-header {
+  @apply flex flex-col sm:flex-row justify-between items-center gap-4 mb-8;
+}
+
+.latest-tour-cards {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.latest-tour-card {
+  @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+  border: 1px solid rgba(45, 90, 39, 0.1);
+}
+
+.tour-details {
+  @apply p-4 md:p-6;
+}
+
+.nights-count {
+  @apply bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium inline-block mb-4;
+}
+
+.tour-title {
+  @apply text-lg md:text-xl font-bold text-dark mb-2;
+}
+
+.tour-agency {
+  @apply text-gray-600 text-sm mb-4;
+}
+
+.tour-times {
+  @apply space-y-3;
+}
+
+.time-detail {
+  @apply flex items-center gap-2 text-gray-600 text-sm;
+}
+
+.time-detail img {
+  @apply w-4 h-4 md:w-5 md:h-5;
+}
+
+.tour-price-section {
+  text-align: left;
+  padding-right: 2rem;
+  border-right: 1px solid #eee;
+}
+
+.price-label {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+}
+
+.tour-final-price {
+  color: #0095ff;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+}
+
+.installment-badge {
+  background: #690d30;
+  color: white;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.see-all-tours {
+  color: #0095ff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .latest-tour-card {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+  }
+
+  .tour-details {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+  }
+
+  .tour-price-section {
+      border-right: none;
+      border-top: 1px solid #eee;
+      padding-top: 1rem;
+      padding-right: 0;
+      width: 100%;
+      text-align: center;
+  }
+}
+
+/* Add styles for blog section */
+.blog-section {
+  padding: 2rem 5%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.blog-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.blog-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.blog-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 1.2rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-title {
+  font-family: 'IranTitr', Vazirmatn, Tahoma, Arial, sans-serif;
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.blog-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #666;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+.blog-category {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+}
+
+.blog-date {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.blog-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+.enter-blog {
+  color: #0095ff;
+  text-decoration: none;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .blog-cards {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Hero Section */
+.hero {
+  @apply min-h-screen flex flex-col items-center justify-center px-4 py-12 md:py-20;
+}
+
+.hero h1 {
+  @apply text-3xl md:text-5xl lg:text-6xl font-bold mb-4 text-dark text-center;
+}
+
+.hero p {
+  @apply text-lg md:text-xl text-gray-600 max-w-2xl mx-auto text-center;
+}
+
+.tour-buttons {
+  @apply flex flex-col sm:flex-row gap-4 mb-8 md:mb-12 w-full max-w-md;
+}
+
+.window-views {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 w-full max-w-6xl;
+}
+
+.plane-window {
+  @apply aspect-[3/4] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+.plane-window img {
+  @apply w-full h-full object-cover hover:scale-105 transition-transform duration-300;
+}
+
+/* Responsive Tour Cards */
+.latest-tours {
+  @apply py-8 md:py-12 px-4 md:px-6 lg:px-8;
+}
+
+.latest-tour-header {
+  @apply flex flex-col sm:flex-row justify-between items-center gap-4 mb-8;
+}
+
+.latest-tour-cards {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.latest-tour-card {
+  @apply bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg;
+  border: 1px solid rgba(45, 90, 39, 0.1);
+}
+
+.tour-details {
+  @apply p-4 md:p-6;
+}
+
+.nights-count {
+  @apply bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium inline-block mb-4;
+}
+
+.tour-title {
+  @apply text-lg md:text-xl font-bold text-dark mb-2;
+}
+
+.tour-agency {
+  @apply text-gray-600 text-sm mb-4;
+}
+
+.tour-times {
+  @apply space-y-3;
+}
+
+.time-detail {
+  @apply flex items-center gap-2 text-gray-600 text-sm;
+}
+
+.time-detail img {
+  @apply w-4 h-4 md:w-5 md:h-5;
+}
+
+/* Responsive Buttons */
+.tour-button {
+  @apply px-4 py-2 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md text-base md:text-lg;
+}
+
+.tour-button.active {
+  @apply bg-primary text-white border-2 border-primary;
+}
+
+.tour-button:not(.active) {
+  @apply bg-light text-primary border-2 border-primary/30 hover:border-primary;
+}
+
+.tour-button:hover {
+  @apply bg-primary/90 text-white transform -translate-y-0.5;
+}
+
+/* Responsive Form Elements */
+.search-input {
+  @apply border-2 border-primary/20 rounded-lg px-4 py-2 focus:border-primary focus:outline-none transition-colors duration-300 w-full;
+}
+
+.search-button {
+  @apply bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition-all duration-300 transform hover:-translate-y-0.5 shadow-sm hover:shadow-md w-full md:w-auto;
+}
+
+/* Responsive Container */
+.container {
+  @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+}
+
+/* Responsive Typography */
+h1 {
+  @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+}
+
+h2 {
+  @apply text-xl md:text-2xl lg:text-3xl font-bold;
+}
+
+h3 {
+  @apply text-lg md:text-xl lg:text-2xl font-bold;
+}
+
+p {
+  @apply text-base md:text-lg;
+}
+
+/* Responsive Spacing */
+.space-y-responsive {
+  @apply space-y-4 md:space-y-6 lg:space-y-8;
+}
+
+.p-responsive {
+  @apply p-4 md:p-6 lg:p-8;
+}
+
+.m-responsive {
+  @apply m-4 md:m-6 lg:m-8;
+}
+
+/* Responsive Grid */
+.grid-responsive {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6;
+}
+
+/* Responsive Flex */
+.flex-responsive {
+  @apply flex flex-col md:flex-row gap-4 md:gap-6;
+}
+
+/* Responsive Images */
+.responsive-image {
+  @apply w-full h-auto object-cover;
+}
+
+/* Responsive Navigation */
+.nav-responsive {
+  @apply flex flex-col md:flex-row items-center gap-4 md:gap-6;
+}
+
+/* Responsive Footer */
+.footer-responsive {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-8 md:py-12;
+}
+
+/* Media Queries for Extra Small Screens */
+@media (max-width: 640px) {
+  .hero h1 {
+    @apply text-2xl;
+  }
+  
+  .hero p {
+    @apply text-base;
+  }
+  
+  .tour-button {
+    @apply text-sm;
+  }
+  
+  .latest-tour-card {
+    @apply p-3;
+  }
+}
+
+/* Media Queries for Small Screens */
+@media (min-width: 641px) and (max-width: 768px) {
+  .hero h1 {
+    @apply text-3xl;
+  }
+  
+  .hero p {
+    @apply text-lg;
+  }
+}
+
+/* Media Queries for Medium Screens */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero h1 {
+    @apply text-4xl;
+  }
+  
+  .hero p {
+    @apply text-xl;
+  }
+}
+
+/* Media Queries for Large Screens */
+@media (min-width: 1025px) {
+  .hero h1 {
+    @apply text-5xl;
+  }
+  
+  .hero p {
+    @apply text-2xl;
+  }
+}
