@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.conf import settings
 from tours.models import Tour
 
 class Booking(models.Model):
@@ -10,7 +10,7 @@ class Booking(models.Model):
         ('completed', 'Completed'),
     ]
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     tour = models.ForeignKey(Tour, on_delete=models.CASCADE)
     booking_date = models.DateField()
     number_of_people = models.PositiveIntegerField()
@@ -56,4 +56,4 @@ class Payment(models.Model):
         ordering = ['-payment_date']
 
     def __str__(self):
-        return f"Payment for Booking {self.booking.id}" 
+        return f"Payment {self.transaction_id} - {self.amount}" 

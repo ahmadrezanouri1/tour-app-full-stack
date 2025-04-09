@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     'destinations.apps.DestinationsConfig',
     'bookings.apps.BookingsConfig',
     'blog.apps.BlogConfig',
+    'otp_auth',
 ]
+
+# Custom user model
+AUTH_USER_MODEL = 'otp_auth.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -284,4 +288,20 @@ JAZZMIN_UI_TWEAKS = {
         "danger": "btn-danger",
         "success": "btn-success"
     }
-} 
+}
+
+# Email Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'your-email@gmail.com'
+EMAIL_HOST_PASSWORD = 'your-app-password'
+DEFAULT_FROM_EMAIL = 'your-email@gmail.com'
+
+# Authentication settings
+ACCOUNT_EMAIL_VERIFICATION = 'none'  # Disable email verification for now
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_UNIQUE_EMAIL = True 

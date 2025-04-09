@@ -26,6 +26,7 @@ urlpatterns = [
     path('api/destinations/', include('destinations.urls')),
     path('api/blog/', include('blog.urls')),
     path('api/bookings/', include('bookings.urls')),
+    path('api/otp/', include('otp_auth.urls')),
     
     # Swagger URLs
     path('swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
